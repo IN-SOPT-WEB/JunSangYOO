@@ -52,6 +52,10 @@ button:hover {
   gap: 20px;
 }
 
+.menu_bar button:focus {
+  background-color: var(--main-color);
+}
+
 main {
   display: flex;
   height: 700px;
@@ -69,6 +73,13 @@ main {
 
 section h2 {
   font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.todo {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid var(--disabled-color);
 }
 
 .add-form {
