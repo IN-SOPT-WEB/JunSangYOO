@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>ToDoList</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">TodoList</h1>
+      <nav class="menu_bar">
+        <p class="ir">메뉴바입니다.</p>
+        <button type="button">오늘만 보기</button>
+        <button type="button">내일만 보기</button>
+        <button type="button">함께 보기</button>
+      </nav>
+    </header>
+    <main>
+      <section class="today-todos">
+        <h2>오늘 할 일</h2>
+        <ul class="todos"></ul>
+        <article class="add-form">
+          <input
+            type="text"
+            class="add-input today-input"
+            placeholder="오늘 할 일을 입력하세요."
+          />
+          <button type="button" class="add-button today-button">+</button>
+        </article>
+      </section>
+      <section class="tomorrow-todos">
+        <h2>내일 할 일</h2>
+        <ul class="todos"></ul>
+        <article class="add-form">
+          <input
+            type="text"
+            class="add-input tomorrow-input"
+            placeholder="내일 할 일을 입력하세요."
+          />
+          <button type="button" class="add-button tomorrow-button">+</button>
+        </article>
+      </section>
+    </main>
+    <footer>내 투두리스트다.</footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
