@@ -67,6 +67,14 @@ i {
   padding: 10px 10px;
 }
 
+.main_menu-bar-right i {
+  vertical-align: -10px;
+}
+
+.main-func {
+  cursor: pointer;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
