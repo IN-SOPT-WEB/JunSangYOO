@@ -39,16 +39,33 @@ bothShowButton.addEventListener('click', () => {
 const addTodo = day => {
   const todo = document.createElement("li");
   todo.classList.add("todo");
-  if (day === 'today') {
-    todo.innerText = todayInput.value;
-    todayList.appendChild(todo);
-    todayInput.value = "";
-  } else {
-    todo.innerText = tomorrowInput.value;
-    tomorrowList.appendChild(todo);
-    tomorrowInput.value = "";
+  return function () {
+    if (day === 'today') {
+      todo.innerText = todayInput.value;
+      todayList.appendChild(todo);
+      todayInput.value = "";
+    } else {
+      todo.innerText = tomorrowInput.value;
+      tomorrowList.appendChild(todo);
+      tomorrowInput.value = "";
+    }
   }
 }
 
-todayButton.addEventListener("click", addTodo.bind(null, 'today'));
-tomorrowButton.addEventListener("click", addTodo.bind(null, 'tomorrow'));
+// 할 일 삭제
+const deleteTodo = day => {
+  return function (e) {
+    if (e.target.nodeName === 'LI') {
+      if (day === 'today') {
+        todayList.removeChild(e.target);
+      } else {
+        tomorrowList.removeChild(e.target);
+      }
+    }
+  }
+}
+
+todayList.addEventListener('click', deleteTodo('today'));
+tomorrowList.addEventListener('click', deleteTodo('tomorrow'));
+todayButton.addEventListener("click", addTodo('today'));
+tomorrowButton.addEventListener("click", addTodo('tomorrow'));
