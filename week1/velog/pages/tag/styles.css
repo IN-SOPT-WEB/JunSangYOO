@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #d3d3d3;
+}
+
+.text-editor {
+    width: 70vw;
+    height: 80vh;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tag-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tag-input {
+    display: block;
+    flex: 1;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding: 20px 10px;
+}
+
+.tag {
+    border: 1px solid black;
+    color: #d3d3d3;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 30px;
+    cursor: pointer;
+}
