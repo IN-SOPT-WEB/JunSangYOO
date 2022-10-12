@@ -20,7 +20,7 @@
       <nav class="header_menu-bar">
         <i class="fa-solid fa-moon fa-xl"></i>
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-        <a href="#">새 글 작성</a>
+        <a class="new-post" href="#">새 글 작성</a>
         <i class="fa-solid fa-user fa-xl"></i>
       </nav>
     </header>
@@ -35,6 +35,16 @@
           <article class="main-func">
             <i class="fa-regular fa-clock fa-lg"></i>
             <span>최신</span>
+          </article>
+          <article class="drop-box">
+            <span>오늘</span>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul class="drop-items hidden">
+              <li class="drop-item">오늘</li>
+              <li class="drop-item">이번 주</li>
+              <li class="drop-item">이번 달</li>
+              <li class="drop-item">올해</li>
+            </ul>
           </article>
         </section>
         <section class="main_menu-bar-right">
@@ -180,5 +190,6 @@
         </article>
       </section>
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>
