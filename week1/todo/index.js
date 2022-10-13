@@ -37,9 +37,9 @@ bothShowButton.addEventListener('click', () => {
 
 // 할 일 추가
 const addTodo = day => {
-  const todo = document.createElement("li");
-  todo.classList.add("todo");
   return function () {
+    const todo = document.createElement("li");
+    todo.classList.add("todo");
     if (day === 'today') {
       todo.innerText = todayInput.value;
       todayList.appendChild(todo);
