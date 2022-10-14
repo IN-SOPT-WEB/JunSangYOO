@@ -69,7 +69,7 @@ JavaScript와 `TypeScript`로 더하기 함수를 생성하는 예시를 살펴�
 <br><br>
 `result` 변수는 당연히 숫자형 타입일 것이다. `result`에 특정 동작을 취하기 위해서 메서드를 사용해봐야겠다.
 
-<video src="./images/auto.mp4" controls autoplay>
+<video src="./images/auto.mp4" controls autoplay loop=infinite>
 </video>
 <br><br>
 
