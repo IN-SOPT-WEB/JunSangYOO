@@ -20,7 +20,7 @@
       <nav class="header_menu-bar">
         <i class="fa-solid fa-moon fa-xl"></i>
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-        <a href="#">새 글 작성</a>
+        <a class="new-post" href="./pages/tag/tag.html">새 글 작성</a>
         <i class="fa-solid fa-user fa-xl"></i>
       </nav>
     </header>
@@ -36,149 +36,196 @@
             <i class="fa-regular fa-clock fa-lg"></i>
             <span>최신</span>
           </article>
+          <article class="drop-box">
+            <span>오늘</span>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul class="drop-items hidden">
+              <li class="drop-item">오늘</li>
+              <li class="drop-item">이번 주</li>
+              <li class="drop-item">이번 달</li>
+              <li class="drop-item">올해</li>
+            </ul>
+          </article>
         </section>
         <section class="main_menu-bar-right">
           <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
         </section>
       </nav>
       <!-- card section -->
+      <section class="modal hidden">
+        <article class="modal-box"></article>
+      </section>
       <section class="cards">
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
+        <section class="card-container">
+          <article class="button-left">
+            <i class="fa-solid fa-arrow-left fa-xl"></i>
+          </article>
+          <section class="cards-row">
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
           </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
+          <article class="button-right">
+            <i class="fa-solid fa-arrow-right fa-xl"></i>
+          </article>
+        </section>
+        <section class="card-container">
+          <section class="cards-row">
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
           </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
+        </section>
+        <section class="card-container">
+          <section class="cards-row">
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
+            <article class="card">
+              <img src="./images/1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
+              <section class="post-info">
+                <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
+                <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
+                <p class="post-time">5일 전 * 3개의 댓글</p>
+                <section class="post-social">
+                  <p class="post-writer">by<strong>Tiger</strong></p>
+                  <article class="post-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>30</strong>
+                  </article>
+                </section>
+              </section>
+            </article>
           </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
-        <article class="card">
-          <img src="./1657840_1.jpg" alt="포스트 썸네일" class="post-image" />
-          <section class="post-info">
-            <h2 class="post-title">켈로그 맛있게 먹는 방법</h2>
-            <p class="post-text">켈로그는 눅눅하게 먹어야 맛있다.</p>
-            <p class="post-time">5일 전 * 3개의 댓글</p>
-            <section class="post-social">
-              <p class="post-writer">by<strong>Tiger</strong></p>
-              <article class="post-heart">
-                <i class="fa-solid fa-heart"></i>
-                <strong>30</strong>
-              </article>
-            </section>
-          </section>
-        </article>
+        </section>
       </section>
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>

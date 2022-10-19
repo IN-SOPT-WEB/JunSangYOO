@@ -4,10 +4,25 @@ body {
   background-color: #d3d3d3;
 }
 
-@media screen and (max-width: 1024px) {
-  body {
-    margin: 0 20px;
-  }
+.modal {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 header {
@@ -31,6 +46,10 @@ i {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .title {
   font-size: 28px;
   font-weight: 600;
@@ -45,11 +64,16 @@ i {
   margin-top: 16px;
 }
 
-.header_menu-bar a {
+.new-post {
   font-weight: 600;
   border: 2px solid black;
   padding: 6px 15px;
   border-radius: 20px;
+}
+
+.new-post:hover {
+  color: white;
+  background-color: black;
 }
 
 .main_menu-bar {
@@ -60,11 +84,37 @@ i {
 
 .main_menu-bar-left {
   display: flex;
+  gap: 5px;
   justify-content: flex-start;
 }
 
-.main_menu-bar-left article {
-  padding: 10px 10px;
+.main-func {
+  padding: 10px;
+}
+
+.drop-box {
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.drop-box span {
+  margin-right: 5px;
+}
+
+.drop-items {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  background-color: white;
+  width: 120px;
+}
+
+.drop-item {
+  padding: 15px 25px 15px 10px;
+  border: 1px solid black;
 }
 
 .main_menu-bar-right i {
@@ -75,30 +125,57 @@ i {
   cursor: pointer;
 }
 
-.cards {
+.card-container {
+  overflow-x: hidden;
+  height: 380px;
+  max-width: 1024px;
+  position: relative;
+}
+
+.button-left, .button-right {
+  position: absolute;
+  top: 30px;
+  z-index: 100;
+  height: calc(100% - 60px);
+}
+
+.button-left i, .button-right i {
+  vertical-align: center;
+  line-height: 300px;
+}
+
+.button-left:hover, .button-right:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.button-left {
+  left: 0;
+}
+
+.button-right {
+  right: 0;
+}
+
+.cards-row {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 32px;
   padding: 30px 0;
 }
 
 .card {
-  width: calc(33% - 18px);
+  flex: 1;
+  min-width: calc(33% - 18px);
   height: 320px;
   border-radius: 5px;
   background-color: white;
 }
 
-@media screen and (max-width: 1024px) {
-  .card {
-    width: calc(50% - 18px);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .card {
-    width: 100%;
-  }
+.modal .modal-box > article {
+  width: 320px;
+  height: 320px;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .post-image {
@@ -138,4 +215,24 @@ i {
 .post-social strong {
   padding-left: 5px;
   font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    flex: 1;
+    min-width: calc(50% - 18px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    flex: 1;
+    min-width: 100%;
+  }
 }
