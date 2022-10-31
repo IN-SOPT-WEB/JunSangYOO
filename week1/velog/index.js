@@ -1,11 +1,13 @@
 // Selector
 const $ = selector => document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
 
 // DOM
 const dropButtonText = $('.drop-box span');
 const dropBox = $('.drop-box');
 const dropBoxIcon = $('.drop-box i');
 const dropItems = $('.drop-items');
+const allDropItem = $$('.drop-item');
 
 const body = $('body');
 const cards = $('.cards');
@@ -23,7 +25,9 @@ const rightButton = $('.button-right');
 // 기능 2. 클릭 시 하위 메뉴 보이기, 숨기기
 dropBox.addEventListener('click', (e) => {
     if(e.target.nodeName === 'LI') {
+        [...allDropItem].forEach(element => element.classList.remove('selected'));
         dropButtonText.innerText = e.target.innerHTML;
+        e.target.classList.add('selected');
     }
     dropItems.classList.toggle('hidden');
 });
@@ -61,7 +65,6 @@ leftButton.addEventListener('click', () => {
 })
 
 rightButton.addEventListener('click', () => {
-    console.log(index);
     index++;
     cardRow.style.transform = `translate3d(${-352 * index}px, 0, 0)`;
     cardRow.style.transition = 'all 0.5s';
