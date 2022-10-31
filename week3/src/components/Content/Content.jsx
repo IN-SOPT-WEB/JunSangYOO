@@ -2,7 +2,6 @@ import React, { createContext, useState } from "react";
 
 import Score from "./Score";
 import Image from "./Image";
-import Buttons from "./Buttons";
 import Again from "./Again";
 
 export const scoreContext = createContext();
@@ -13,7 +12,6 @@ export default function Content() {
     <scoreContext.Provider value={scoreState}>
       <Score />
       <Image />
-      <Buttons />
       <Again />
     </scoreContext.Provider>
   );
