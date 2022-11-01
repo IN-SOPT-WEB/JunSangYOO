@@ -1,6 +1,9 @@
 import React, { useState, useCallback, useContext } from "react";
 import styled from "styled-components";
 
+import ModalPortal from "../ModalPortal";
+import Modal from "../Modal";
+
 import TypeScriptImage from "../../images/typescript.png";
 import JavaScriptImage from "../../images/javascript.png";
 import ReduxImage from "../../images/redux.png";
@@ -20,25 +23,39 @@ export default function Image() {
   const [, setScore] = useContext(scoreContext);
   const [problemNum, setProblemNum] = useState(0);
   const [isFinish, setIsFinish] = useState(false);
+  const [modal, setModal] = useState({ isOpen: false, isRight: false });
 
   const onClickButton = useCallback(
     (e) => {
       if (problemNum === imagesAry.length - 1) {
         if (e.target.innerText === imagesAry[problemNum].answer) {
           setScore((prev) => prev + 1);
+          setModal((state) => ({ ...state, isOpen: true, isRight: true }));
+          setIsFinish(true);
+        } else {
+          setModal((state) => ({ ...state, isOpen: true, isRight: false }));
         }
-        e.preventDefault();
-        setIsFinish(true);
         return;
       }
 
       if (e.target.innerText === imagesAry[problemNum].answer) {
+        setModal((state) => ({ ...state, isOpen: true, isRight: true }));
         setProblemNum((prev) => prev + 1);
         setScore((prev) => prev + 1);
+        return;
+      }
+
+      if (e.target.innerText !== imagesAry[problemNum.answer]) {
+        setModal((state) => ({ ...state, isOpen: true, isRight: false }));
       }
     },
     [problemNum, setScore]
   );
+
+  const onClickModal = useCallback(() => {
+    setModal((state) => ({ ...state, isOpen: false }));
+  }, []);
+
   return (
     <>
       {isFinish ? (
@@ -64,6 +81,11 @@ export default function Image() {
             </Button>
           </Buttons>
         </>
+      )}
+      {modal.isOpen && (
+        <ModalPortal>
+          <Modal onClick={onClickModal} isRight={modal.isRight} />
+        </ModalPortal>
       )}
     </>
   );
