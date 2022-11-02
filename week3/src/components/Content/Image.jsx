@@ -49,7 +49,7 @@ export default function Image() {
     }
   };
 
-  const onClickModal = () => {
+  const closeModal = () => {
     setModal((state) => ({ ...state, isOpen: false }));
   };
 
@@ -81,7 +81,7 @@ export default function Image() {
       )}
       {modal.isOpen && (
         <ModalPortal>
-          <Modal onClick={onClickModal} isRight={modal.isRight} />
+          <Modal onClick={closeModal} isRight={modal.isRight} />
         </ModalPortal>
       )}
     </>
