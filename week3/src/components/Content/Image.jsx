@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import ModalPortal from "../ModalPortal";
@@ -25,36 +25,33 @@ export default function Image() {
   const [isFinish, setIsFinish] = useState(false);
   const [modal, setModal] = useState({ isOpen: false, isRight: false });
 
-  const onClickButton = useCallback(
-    (e) => {
-      if (problemNum === imagesAry.length - 1) {
-        if (e.target.innerText === imagesAry[problemNum].answer) {
-          setScore((prev) => prev + 1);
-          setModal((state) => ({ ...state, isOpen: true, isRight: true }));
-          setIsFinish(true);
-        } else {
-          setModal((state) => ({ ...state, isOpen: true, isRight: false }));
-        }
-        return;
-      }
-
+  const onClickButton = (e) => {
+    if (problemNum === imagesAry.length - 1) {
       if (e.target.innerText === imagesAry[problemNum].answer) {
-        setModal((state) => ({ ...state, isOpen: true, isRight: true }));
-        setProblemNum((prev) => prev + 1);
         setScore((prev) => prev + 1);
-        return;
-      }
-
-      if (e.target.innerText !== imagesAry[problemNum.answer]) {
+        setModal((state) => ({ ...state, isOpen: true, isRight: true }));
+        setIsFinish(true);
+      } else {
         setModal((state) => ({ ...state, isOpen: true, isRight: false }));
       }
-    },
-    [problemNum, setScore]
-  );
+      return;
+    }
 
-  const onClickModal = useCallback(() => {
+    if (e.target.innerText === imagesAry[problemNum].answer) {
+      setModal((state) => ({ ...state, isOpen: true, isRight: true }));
+      setProblemNum((prev) => prev + 1);
+      setScore((prev) => prev + 1);
+      return;
+    }
+
+    if (e.target.innerText !== imagesAry[problemNum.answer]) {
+      setModal((state) => ({ ...state, isOpen: true, isRight: false }));
+    }
+  };
+
+  const onClickModal = () => {
     setModal((state) => ({ ...state, isOpen: false }));
-  }, []);
+  };
 
   return (
     <>
