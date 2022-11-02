@@ -9,7 +9,7 @@ import JavaScriptImage from "../../images/javascript.png";
 import ReduxImage from "../../images/redux.png";
 import HTMLImage from "../../images/html.png";
 import CSSImage from "../../images/css.png";
-import { scoreContext } from "./Content";
+import { scoreContext } from "./Provider";
 
 const imagesAry = [
   { src: TypeScriptImage, answer: "TypeScript" },

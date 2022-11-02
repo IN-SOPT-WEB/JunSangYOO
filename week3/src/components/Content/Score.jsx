@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { scoreContext } from "./Content";
+import { scoreContext } from "./Provider";
 
 export default function Score() {
   const [score] = useContext(scoreContext);

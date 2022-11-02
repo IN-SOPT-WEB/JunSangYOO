@@ -1,18 +1,18 @@
-import React, { createContext, useState } from "react";
+import React from "react";
 
+import Provider from "./Provider";
 import Score from "./Score";
 import Image from "./Image";
 import Again from "./Again";
 
-export const scoreContext = createContext();
-
 export default function Content() {
-  const scoreState = useState(0);
   return (
-    <scoreContext.Provider value={scoreState}>
-      <Score />
-      <Image />
+    <>
+      <Provider>
+        <Score />
+        <Image />
+      </Provider>
       <Again />
-    </scoreContext.Provider>
+    </>
   );
 }
