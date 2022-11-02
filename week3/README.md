@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# CSR Framework, Library 비교
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 각 Framework, Library의 주된 차이점
 
-## Available Scripts
+### 1. `Virutal DOM` vs `Real DOM`
 
-In the project directory, you can run:
+우선 `Virutal DOM`과 `Real DOM`이 무엇인지부터 확인해보자.
+<br><br>
 
-### `npm start`
+- ## `Virtual DOM`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  `Virtual DOM`이란 직역하면 가상 DOM으로, 실제 DOM에서 처리하는 방식이 아닌 `Virtual DOM`과 메모리에서 미리 처리를 하고, 실제 DOM과 다른 점을 비교해서 **딱 한 번의** 렌더링이 발생한다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <br>
 
-### `npm test`
+  흔히들 말하는 `Virtual DOM`의 특징은 직접적인 DOM 조작 시에 발생하는 비효율적인 렌더링 문제를 해결해준다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <div align='center'>
+  <img src='./DocsImages/virtual-dom.png' />
+  </div>
+  <br><br>
 
-### `npm run build`
+- ## `Real DOM`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  `Real DOM`은 말그대로 가상 DOM이 아닌 브라우저의 실제 DOM Tree를 조작하는 방식이다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+|   `Virtual DOM`    | `Real DOM` |
+| :----------------: | :--------: |
+| React, Vue, Svelte |  Angular   |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+### 2. 검색 엔진 최적화를 위한 서버 사이드 렌더링 지원 여부
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React, Vue, Angular, Svelte 모두 `SPA`를 위한 프레임워크 및 라이브러리이다.
+<br><br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+하지만, Single Page Application의 치명적인 단점 중 하나는 검색 엔진 최적화에 매우 취약하다는 점이다.
+<br><br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+따라서, 개발을 진행할 때 전통적인 방식인 `Server Side Rendering` 방식과 `Client Side Rendering` 방식을 혼합하여 개발한다.
+<br><br>
 
-## Learn More
+Angular의 `Real DOM`은 `SPA`에서 매우 효율적이지만, `Server Side Rendering`을 지원하지 않는다는 치명적인 단점을 가지고 있다.
+<br><br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+|           `SSR 지원 O`           | `SSR 지원 X` |
+| :------------------------------: | :----------: |
+| React (Next), Vue (Nuxt), Svelte |   Angular    |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+## 스타트업을 창업한다면, 어떠한 것을 사용하는 것이 좋을까?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+스타트업 창업 단계에서는 `Vue` 프레임워크를 사용하는 것이 좋은 선택이라고 생각한다.
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. `Vue` 프레임워크는 러닝커브가 매우 낮다. 그렇다고 `React`, `Angular`에 비해 기능이 떨어지는 것도 아니다. 서버 사이드 렌더링을 지원하고, `React`와 마찬가지로 앱도 제작할 수 있다.
 
-### Making a Progressive Web App
+2. 라이브러리인 `React`에 비해, 프레임워크인 `Vue`는 프레임워크에 익숙하기만 하면 틀이 어느정도 정해져있기 때문에 굉장히 빠른 개발을 진행할 수 있어서 초기 스타트업에 적절하다고 생각든다.
+   <br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 그렇다면, 나는 왜 React를 학습하고 있는가?
 
-### Advanced Configuration
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+위에서 설명한 `Vue`의 장점들을 뒤로하고, `React`를 학습하는 이유는 다음과 같다.
 
-### Deployment
+## 압도적인 점유율
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 취업준비생 입장에서는 1번의 이유가 굉장히 중요하게 작용한다. 압도적인 점유율을 지닌다는 뜻은 취업시장에서 더 확률이 높다는 뜻이기도 하다.
+- 또한, 압도적인 점유율은 곧 압도적인 커뮤니티로 이어지기도 하다. 커뮤니티가 활성화되어있다는 것은 우리들과 같은 주니어 개발자들이 공부하기 용이하다는 뜻이기도 하다.
