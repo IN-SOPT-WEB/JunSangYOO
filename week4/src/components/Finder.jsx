@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { getUserAPI } from "../api/userAPI";
 
 import Container from "./Container";
 
 export default function Finder() {
+  const onSearchUser = (e) => {
+    if (e.key === "Enter") {
+      getUserAPI(e.target.value);
+    }
+  };
   return (
     <Container>
       <FinderTitle>Github Profile Finder</FinderTitle>
-      <FinderInput />
+      <FinderInput onKeyDown={onSearchUser} />
     </Container>
   );
 }

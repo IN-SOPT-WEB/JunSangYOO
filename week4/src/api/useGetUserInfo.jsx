@@ -6,6 +6,7 @@ export default function useGetUserInfo() {
   const { isLoading, isError, data, error } = useQuery(["user"], getUserAPI, {
     refetchOnWindowFocus: false,
     retry: 0,
+    refetchOnMount: false,
   });
 
   // 추후에 구현할 Loading, Error boundary 처리
