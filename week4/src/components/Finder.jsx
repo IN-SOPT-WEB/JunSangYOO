@@ -1,13 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { getUserAPI } from "../api/userAPI";
+import { useNavigate } from "react-router-dom";
+import { atom, useRecoilState } from "recoil";
+import { v1 } from "uuid";
 
 import Container from "./Container";
 
+export const userNameState = atom({
+  key: `userNameState/${v1}`,
+  default: "",
+});
+
 export default function Finder() {
+  const navigate = useNavigate();
+  const [, setUserName] = useRecoilState(userNameState);
   const onSearchUser = (e) => {
     if (e.key === "Enter") {
-      getUserAPI(e.target.value);
+      setUserName(e.target.value);
+      navigate(`/search/${e.target.value}`);
     }
   };
   return (
