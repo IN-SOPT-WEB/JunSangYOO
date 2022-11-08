@@ -1,25 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { atom, useRecoilState } from "recoil";
-import { v1 } from "uuid";
 
 import Container from "./Container";
-
-export const userNameState = atom({
-  key: `userNameState/${v1}`,
-  default: "",
-});
+import { getUserAPI } from "../api/userAPI";
 
 export default function Finder() {
   const navigate = useNavigate();
-  const [, setUserName] = useRecoilState(userNameState);
-  const onSearchUser = (e) => {
+  // mutate 구현하기
+  const onSearchUser = async (e) => {
     if (e.key === "Enter") {
-      setUserName(e.target.value);
-      navigate(`/search/${e.target.value}`);
+      navigate(`/search/${e.target.value}`, {
+        state: {
+          login: await getUserAPI(e.target.value),
+        },
+      });
     }
   };
+
   return (
     <Container>
       <FinderTitle>Github Profile Finder</FinderTitle>

@@ -8,7 +8,11 @@ export default function Container({ children }) {
 const ContainerBox = styled.article`
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  padding: 20px 0;
+  padding: 30px 50px;
   width: 60%;
-  margin: 0 auto;
+  margin: 30px auto;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+  font-weight: 600;
 `;

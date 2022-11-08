@@ -1,19 +1,15 @@
 import React from "react";
-import { useRecoilState } from "recoil";
-import useGetUserInfo from "../api/useGetUserInfo";
-import { userNameState } from "../components/Finder";
+import { useLocation } from "react-router-dom";
 
 import Finder from "../components/Finder";
+import Profile from "../components/Profile";
 
 export default function UserInfo() {
-  const userName = useRecoilState(userNameState)[0];
-  const userInfo = useGetUserInfo(userName);
-  console.log(userName);
-
+  const location = useLocation();
   return (
     <>
       <Finder />
-      <p>{userInfo?.bio}</p>
+      <Profile userInfo={location.state.login} />
     </>
   );
 }
