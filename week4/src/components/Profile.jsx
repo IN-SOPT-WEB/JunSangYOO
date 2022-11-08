@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Container from "./Container";
+import CloseButton from "./CloseButton";
 
 export default function Profile({ userInfo }) {
+  const navigate = useNavigate();
+  const onClickCloseButton = useCallback(() => {
+    navigate("/search");
+  }, [navigate]);
   return (
     <Container>
+      <CloseButton onClick={onClickCloseButton} />
       <ProfileImg src={userInfo.avatar_url} />
       <UserNickName>{userInfo.login}</UserNickName>
       <UserName>{userInfo.name}</UserName>
