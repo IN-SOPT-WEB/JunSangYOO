@@ -9,8 +9,10 @@ const Btn = styled.button`
   border: 2px solid white;
   color: white;
   cursor: pointer;
-  padding: 15px 18px;
+  padding: 10px 10px;
   border-radius: 10px;
   background-color: transparent;
-  margin-bottom: 20px;
+  float: right;
+  margin-right: -40px;
+  margin-top: -10px;
 `;

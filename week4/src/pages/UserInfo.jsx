@@ -9,7 +9,7 @@ export default function UserInfo() {
   return (
     <>
       <Finder />
-      <Profile userInfo={location.state.login} />
+      <Profile userInfo={location.state.userInfo} />
     </>
   );
 }
