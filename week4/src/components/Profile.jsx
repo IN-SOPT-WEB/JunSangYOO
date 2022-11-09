@@ -1,38 +1,47 @@
 import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import useGetUserInfo from "../api/useGetUserInfo";
 import styled from "styled-components";
 
 import Container from "./Container";
 import CloseButton from "./CloseButton";
 
-export default function Profile({ userInfo }) {
+export default function Profile() {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const userInfo = useGetUserInfo(location.state.name);
+
   const onClickCloseButton = useCallback(() => {
     navigate("/search");
   }, [navigate]);
   return (
     <Container>
-      <CloseButton onClick={onClickCloseButton} />
-      <ProfileImg src={userInfo.avatar_url} />
-      <UserNickName>{userInfo.login}</UserNickName>
-      <UserName>{userInfo.name}</UserName>
-      <UserProfileLink href={userInfo.html_url}>
-        Visit {userInfo.login}
-      </UserProfileLink>
-      <InfoBox>
-        <Info>
-          <InfoTitle>Followers</InfoTitle>
-          <InfoNum>{userInfo.followers}</InfoNum>
-        </Info>
-        <Info>
-          <InfoTitle>Followings</InfoTitle>
-          <InfoNum>{userInfo.following}</InfoNum>
-        </Info>
-        <Info>
-          <InfoTitle>Repos</InfoTitle>
-          <InfoNum>{userInfo.public_repos}</InfoNum>
-        </Info>
-      </InfoBox>
+      {userInfo && (
+        <>
+          <CloseButton onClick={onClickCloseButton} />
+          <ProfileImg src={userInfo.avatar_url} />
+          <UserNickName>{userInfo.login}</UserNickName>
+          <UserName>{userInfo.name}</UserName>
+          <UserProfileLink href={userInfo.html_url}>
+            Visit {userInfo.login}
+          </UserProfileLink>
+          <InfoBox>
+            <Info>
+              <InfoTitle>Followers</InfoTitle>
+              <InfoNum>{userInfo.followers}</InfoNum>
+            </Info>
+            <Info>
+              <InfoTitle>Followings</InfoTitle>
+              <InfoNum>{userInfo.following}</InfoNum>
+            </Info>
+            <Info>
+              <InfoTitle>Repos</InfoTitle>
+              <InfoNum>{userInfo.public_repos}</InfoNum>
+            </Info>
+          </InfoBox>
+        </>
+      )}
     </Container>
   );
 }

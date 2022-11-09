@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { getUserAPI } from "../api/userAPI";
 
 import Container from "./Container";
 import CloseButton from "./CloseButton";
@@ -9,6 +8,7 @@ import CloseButton from "./CloseButton";
 export default function Finder() {
   const navigate = useNavigate();
 
+  // const [isLoading, setIsLoading] = useState(false);
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history") || "[]")
   );
@@ -36,7 +36,7 @@ export default function Finder() {
       });
       navigate(`/search/${e.target.value}`, {
         state: {
-          userInfo: await getUserAPI(e.target.value),
+          name: e.target.value,
         },
       });
     }
@@ -45,7 +45,7 @@ export default function Finder() {
   const onClickSearchHistory = async (e) => {
     navigate(`/search/${e.target.textContent.slice(0, -1)}`, {
       state: {
-        userInfo: await getUserAPI(e.target.textContent.slice(0, -1)),
+        name: e.target.textContent.slice(0, -1),
       },
     });
   };
