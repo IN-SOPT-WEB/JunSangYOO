@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-
 import { getUserAPI } from "./userAPI";
 
 export default function useGetUserInfo(userId) {
@@ -9,6 +8,7 @@ export default function useGetUserInfo(userId) {
     {
       refetchOnWindowFocus: false,
       retry: 0,
+      suspense: true,
     }
   );
   return data;

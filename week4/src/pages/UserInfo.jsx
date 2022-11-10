@@ -1,15 +1,13 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 import Finder from "../components/Finder";
-import Profile from "../components/Profile";
+import SuspenseContainer from "../components/SuspenseContainer";
 
 export default function UserInfo() {
-  const location = useLocation();
   return (
     <>
       <Finder />
-      <Profile userInfo={location.state.userInfo} />
+      <SuspenseContainer />
     </>
   );
 }

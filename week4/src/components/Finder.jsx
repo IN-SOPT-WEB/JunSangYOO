@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -7,8 +7,6 @@ import CloseButton from "./CloseButton";
 
 export default function Finder() {
   const navigate = useNavigate();
-
-  // const [isLoading, setIsLoading] = useState(false);
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history") || "[]")
   );
@@ -17,15 +15,18 @@ export default function Finder() {
     localStorage.setItem("history", JSON.stringify(history));
   }, [history]);
 
-  const onDeleteHistory = (e) => {
+  console.log(history);
+
+  const onDeleteHistory = useCallback((e) => {
+    e.stopPropagation();
     setHistory((prev) =>
       prev.filter(
         (item) => item !== e.target.parentNode.textContent.slice(0, -1)
       )
     );
-  };
+  }, []);
 
-  const onSearchUser = async (e) => {
+  const onSearchUser = (e) => {
     if (e.key === "Enter") {
       setHistory((prev) => {
         if (prev.indexOf(e.target.value) === -1) {
@@ -42,7 +43,7 @@ export default function Finder() {
     }
   };
 
-  const onClickSearchHistory = async (e) => {
+  const onClickSearchHistory = (e) => {
     navigate(`/search/${e.target.textContent.slice(0, -1)}`, {
       state: {
         name: e.target.textContent.slice(0, -1),
@@ -92,4 +93,5 @@ const HistoryBox = styled.ul`
 const HistoryEl = styled.li`
   padding: 10px 20px;
   color: white;
+  cursor: pointer;
 `;
