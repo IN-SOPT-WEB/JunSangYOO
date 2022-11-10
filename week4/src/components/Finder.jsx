@@ -1,15 +1,20 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { atom, useRecoilState } from "recoil";
+import { v1 } from "uuid";
 
 import Container from "./Container";
 import CloseButton from "./CloseButton";
 
+const historyState = atom({
+  key: `historyState${v1()}`,
+  default: JSON.parse(localStorage.getItem("history") || "[]"),
+});
+
 export default function Finder() {
   const navigate = useNavigate();
-  const [history, setHistory] = useState(
-    JSON.parse(localStorage.getItem("history") || "[]")
-  );
+  const [history, setHistory] = useRecoilState(historyState);
 
   useEffect(() => {
     localStorage.setItem("history", JSON.stringify(history));
@@ -17,14 +22,17 @@ export default function Finder() {
 
   console.log(history);
 
-  const onDeleteHistory = useCallback((e) => {
-    e.stopPropagation();
-    setHistory((prev) =>
-      prev.filter(
-        (item) => item !== e.target.parentNode.textContent.slice(0, -1)
-      )
-    );
-  }, []);
+  const onDeleteHistory = useCallback(
+    (e) => {
+      e.stopPropagation();
+      setHistory((prev) =>
+        prev.filter(
+          (item) => item !== e.target.parentNode.textContent.slice(0, -1)
+        )
+      );
+    },
+    [setHistory]
+  );
 
   const onSearchUser = (e) => {
     if (e.key === "Enter") {
