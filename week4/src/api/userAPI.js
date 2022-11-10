@@ -8,3 +8,12 @@ export const getUserAPI = async (username) => {
     console.error(error);
   }
 };
+
+export const getMyTeamAPI = async () => {
+  try {
+    const res = await axios.get("/user/team");
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
