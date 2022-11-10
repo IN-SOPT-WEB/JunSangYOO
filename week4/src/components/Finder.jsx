@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { atom, useRecoilState } from "recoil";
@@ -19,8 +19,6 @@ export default function Finder() {
   useEffect(() => {
     localStorage.setItem("history", JSON.stringify(history));
   }, [history]);
-
-  console.log(history);
 
   const onDeleteHistory = useCallback(
     (e) => {
